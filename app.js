@@ -3,6 +3,18 @@
 
 let amigos = [];
 
+let input = document.getElementById('amigo')
+
+input.addEventListener('keyup', function(event) {
+    // console.log(event.code + '\t' + event.key)
+    input.placeholder = 'Digite um nome!';
+    input.classList.remove('alert');
+    event.preventDefault();
+    if (event.code === 'Enter') {
+        document.getElementById('btnAddAmigo').click();
+    }
+});
+
 function adicionarAmigo(){
 
     // limpa resultado anterior antes de adicionar
@@ -12,14 +24,20 @@ function adicionarAmigo(){
     let nome = input.value.trim().toUpperCase();
 
     if(!nome){
-        alert('Por favor insira um nome!');
-    }else if(!amigos.includes(nome)){
-        amigos.push(nome);
+        //alert('Por favor insira um nome!');
+        input.placeholder = 'ERRO! Por favor insira um nome!';
+        input.classList.add('alert');
         input.focus();
+        return;
+    }else if(!amigos.includes(nome)){
+        amigos.push(nome);        
     }else{
-        alert('"' + nome + '" já existe na lista!');
+        alert('"' + nome + '"' + 'já existe na lista!');
     }
     
+    input.focus();
+    //input.placeholder = 'Digite um nome!';
+    //input.classList.remove('alert');
     input.value = '';
     atualizarListaAmigos();
 

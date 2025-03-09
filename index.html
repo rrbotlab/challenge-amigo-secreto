@@ -11,20 +11,21 @@
 </head>
 
 <body>
+    <header class="header-banner">
+        <h1 class="main-title">Amigo Secreto</h1>
+        <img src="assets/amigo-secreto.png" alt="Imagem representativa de amigo secreto">
+    </header>
+    <nav class="nav">
+        <ul>
+            <li><a href="https://github.com/rrbotlab/challenge-amigo-secreto"><img src="assets/github.256x252.png" width="24" height="24"></a></li>
+        </ul>
+    </nav>
     <main class="main-content">
-        <menu style="margin-left: auto;list-style: none;padding: 1em;">
-            <li><a href="https://github.com/rrbotlab/challenge-amigo-secreto"><img src="assets/github.256x252.png" width="24" height="24"> GitHub</a></li>
-        </menu>
-        <header class="header-banner">
-            <h1 class="main-title">Amigo Secreto</h1>
-            <img src="assets/amigo-secreto.png" alt="Imagem representativa de amigo secreto">
-        </header>
-        
         <section class="input-section">
             <h2 class="section-title">Digite o nome dos seus amigos</h2>
             <div class="input-wrapper">
                 <input type="text" id="amigo" class="input-name" placeholder="Digite um nome">
-                <button class="button-add" onclick="adicionarAmigo()">Adicionar</button>
+                <button id="btnAddAmigo" class="button-add" onclick="adicionarAmigo()">Adicionar</button>
             </div>
            
             <ul id="listaAmigos" class="name-list" aria-labelledby="listaAmigos" role="list"></ul>
